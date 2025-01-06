@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Virtual Type Definition for Pool Modifier -->
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument xsi:type="array" name="modifiers">
+                <!-- Custom Modifier Class -->
+                <item xsi:type="array" name="custom_gift_option_modifier">
+                    <!-- Sort Order for the Modifier -->
+                    <item xsi:type="string" name="class">Maginium\Product\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</item>
+                    <!-- This custom modifier will be added to the `Pool` modifier with a specified sort order -->
+                    <item xsi:type="number" name="sortOrder">200</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

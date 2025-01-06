@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define a preference for the Magento\Catalog\Model\Product, specifying the custom Product class implementation. -->
+    <preference for="Magento\Catalog\Model\Product" type="Maginium\Product\Models\Product" />
+
+    <!-- Define a preference for the ProductInterface, specifying the custom Product class implementation. -->
+    <preference for="Maginium\Product\Interfaces\Data\ProductInterface" type="Maginium\Product\Models\Product" />
+
+    <!-- Define a preference for the ProductInterface, specifying the custom Product class implementation. -->
+    <preference for="Maginium\Product\Interfaces\Data\ProductInterface" type="Maginium\Product\Models\Product" />
+
+    <!-- Define a preference for the ProductRepositoryInterface, specifying the custom ProductRepository class implementation. -->
+    <preference for="Maginium\Product\Interfaces\Repositories\ProductRepositoryInterface" type="Maginium\Product\Repositories\ProductRepository" />
+
+    <!-- Define a preference for the ProductServiceInterface, specifying the custom ProductService class implementation. -->
+    <preference for="Maginium\Product\Interfaces\Services\ProductServiceInterface" type="Maginium\Product\Services\ProductService" />
+
+    <!-- Define metadata for the ProductInterface model -->
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument xsi:type="array" name="metadata">
+                <item xsi:type="array" name="Maginium\Product\Interfaces\Data\ProductInterface">
+                    <item xsi:type="const" name="entityTableName">Maginium\Product\Interfaces\Data\ProductInterface::TABLE_NAME</item>
+                    <item xsi:type="const" name="identifierField">Maginium\Product\Interfaces\Data\ProductInterface::ID</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Define a hydrator for the ProductInterface model -->
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument xsi:type="array" name="hydrators">
+                <item
+                    xsi:type="string"
+                    name="Maginium\Product\Interfaces\Data\ProductInterface"
+                >Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Maginium\Product\Models\DataSourceResolver" type="Maginium\Framework\Database\DataSourceResolver" />
+    
+    <!-- Datasources resolver -->
+    <type name="Maginium\Product\Models\Product">
+        <plugin name="product_model_resolver" sortOrder="1" type="Maginium\Product\Models\DataSourceResolver" />
+    </type>
+
+</config>

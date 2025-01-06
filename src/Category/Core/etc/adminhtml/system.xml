@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <!-- Root system configuration -->
+    <system>
+        <!-- Catalog section configuration -->
+        <section id="catalog">
+            <!-- Category group settings -->
+            <group id="category" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="301" translate="label">
+                <!-- Label for the Category Image Placeholder group -->
+                <label>Category Image Placeholder</label>
+
+                <!-- Field for uploading category image placeholder -->
+                <field id="placeholder" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="5" translate="label" type="image">
+                    <!-- Label for the placeholder field -->
+                    <label>Image</label>
+                    <!-- Backend model for handling image upload -->
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+
+                    <!-- Base URL path for uploading the image -->
+                    <base_url scope_info="1" type="media">catalog/category/placeholder</base_url>
+                    <!-- Directory for uploading image files -->
+                    <upload_dir config="catalog/category/placeholder" scope_info="1">catalog/category/placeholder</upload_dir>
+                    <!-- Config path for storing the image URL in the Magento configuration -->
+                    <config_path>catalog/category/placeholder</config_path>
+
+                    <!-- Comment describing allowed file types -->
+                    <comment>
+                        <![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]>
+                    </comment>
+                </field>
+            </group>
+
+            <!-- Frontend group settings -->
+            <group id="frontend">
+                <!-- Field to define the limit of featured categories -->
+                <field
+                    canRestore="1"
+                    id="categories_limit"
+                    showInDefault="1"
+                    showInStore="0"
+                    showInWebsite="1"
+                    sortOrder="5"
+                    translate="label"
+                    type="text"
+                >
+                    <!-- Label for the featured categories limit field -->
+                    <label>Featured Categories Limit</label>
+                    <!-- Validation rule to ensure the value is a number -->
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

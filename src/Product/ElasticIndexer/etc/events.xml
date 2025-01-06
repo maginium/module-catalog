@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Event: product_load_after -->
+    <event name="product_load_after">
+        <!-- Subsciber for the "product_load_after" event -->
+        <observer instance="Maginium\ProductElasticIndexer\Observers\ProductIndexer" name="product_load_after" />
+    </event>
+
+    <!-- Event: product_save_after -->
+    <event name="product_save_after">
+        <!-- Subsciber for the "product_save_after" event -->
+        <observer instance="Maginium\ProductElasticIndexer\Observers\ProductIndexer" name="product_save_after" />
+    </event>
+
+    <!-- Event: product_delete_after -->
+    <event name="product_delete_after">
+        <!-- Subsciber for the "product_delete_after" event -->
+        <observer instance="Maginium\ProductElasticIndexer\Observers\ProductIndexer" name="product_delete_after" />
+    </event>
+
+    <!-- Event: product_mass_delete_after -->
+    <event name="product_mass_delete_after">
+        <!-- Subsciber for the "product_mass_delete_after" event -->
+        <observer instance="Maginium\ProductElasticIndexer\Observers\ProductIndexer" name="product_mass_delete_after" />
+    </event>
+
+    <!-- Event: product_duplicate -->
+    <event name="product_duplicate">
+        <!-- Subsciber for the "product_duplicate" event -->
+        <observer instance="Maginium\ProductElasticIndexer\Observers\ProductIndexer" name="product_duplicate" />
+    </event>
+
+    <!-- Event: product_mass_update_status_after -->
+    <event name="product_mass_update_status_after">
+        <!-- Subsciber for the "product_mass_update_status_after" event -->
+        <observer instance="Maginium\ProductElasticIndexer\Observers\ProductIndexer" name="product_mass_update_status_after" />
+    </event>
+
+    <!-- Event: product_mass_duplicate_after -->
+    <event name="product_mass_duplicate_after">
+        <!-- Subsciber for the "product_mass_duplicate_after" event -->
+        <observer instance="Maginium\ProductElasticIndexer\Observers\ProductIndexer" name="product_mass_duplicate_after" />
+    </event>
+</config>

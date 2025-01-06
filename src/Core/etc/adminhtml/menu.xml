@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!-- Remove the default menu item for Attribute Sets -->
+        <!-- <remove id="Magento_Catalog::catalog_attributes_sets" /> -->
+
+        <!-- Remove the default menu item for Attributes -->
+        <!-- <remove id="Magento_Catalog::catalog_attributes_attributes" /> -->
+
+        <!-- Add custom attributes menu under Catalog -->
+        <update
+            id="Magento_Catalog::catalog_attributes_attributes"
+            module="Maginium_Catalog"
+            parent="Magento_Catalog::catalog"
+            resource="Maginium_Catalog::catalog"
+            sortOrder="100"
+            title="Attributes"
+        />
+
+        <!-- Add Product Attributes sub-menu under Attributes -->
+        <update
+            action="catalog/product_attribute/"
+            id="Maginium_Catalog::catalog_product_attributes"
+            module="Maginium_Catalog"
+            parent="Maginium_Catalog::catalog_attributes_attributes"
+            resource="Maginium_Catalog::attributes_attributes"
+            sortOrder="10"
+            title="Product"
+            translate="title"
+        />
+
+        <!-- Add Attribute Set sub-menu under Attributes -->
+        <update
+            action="catalog/product_set/"
+            id="Magento_Catalog::catalog_attributes_sets"
+            module="Maginium_Catalog"
+            parent="Maginium_Catalog::catalog_attributes_attributes"
+            resource="Maginium_Catalog::sets"
+            sortOrder="20"
+            title="Attribute Set"
+            translate="title"
+        />
+    </menu>
+</config>

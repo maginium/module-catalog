@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Fieldset grouping fields related to general configuration -->
+    <fieldset name="general" sortOrder="5">
+        <!-- Field for the 'include_in_menu' property, which is a checkbox -->
+        <field formElement="checkbox" name="include_in_menu" sortOrder="20">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Set default value to 0 (false) for 'include_in_menu' -->
+                    <item xsi:type="number" name="default">0</item>
+                </item>
+            </argument>
+            <settings>
+                <!-- Make this field invisible in the UI -->
+                <visible>false</visible>
+            </settings>
+        </field>
+
+        <!-- Field for the 'is_active' property, which is a checkbox for enabling/disabling functionality -->
+        <field formElement="checkbox" name="is_active" sortOrder="10">
+            <settings>
+                <!-- Label for the 'is_active' checkbox field -->
+                <label translate="true">Is Enabled</label>
+            </settings>
+        </field>
+    </fieldset>
+
+    <!-- Fieldset for content section, sorted with a sortOrder of 10 -->
+    <fieldset name="content" sortOrder="10">
+        <!-- Image field for uploading an image, sortOrder 40 to order it later -->
+        <field formElement="imageUploader" name="image" sortOrder="40">
+            <settings>
+                <!-- Hidden from the UI -->
+                <visible>false</visible>
+            </settings>
+        </field>
+    </fieldset>
+
+    <!-- Fieldset for media content, collapsible, with a translated label -->
+    <fieldset name="media_content" sortOrder="20">
+        <settings>
+            <!-- Make the fieldset collapsible -->
+            <collapsible>true</collapsible>
+            <!-- Label for the fieldset, translated for localization -->
+            <label translate="true">Media Content</label>
+        </settings>
+
+        <!-- Image field for uploading a category banner -->
+        <field formElement="imageUploader" name="image" sortOrder="10">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Source is set to 'category' for this image -->
+                    <item xsi:type="string" name="source">category</item>
+                </item>
+            </argument>
+            <settings>
+                <!-- Use a custom template for image uploader -->
+                <elementTmpl>ui/form/element/uploader/image</elementTmpl>
+
+                <!-- Data type is string, as the image path will be stored -->
+                <dataType>string</dataType>
+
+                <!-- Label for the image field, translated for localization -->
+                <label translate="true">Banner</label>
+
+                <!-- Field visibility is true (visible) -->
+                <visible>true</visible>
+
+                <!-- Field is not required -->
+                <required>false</required>
+            </settings>
+
+            <!-- UI component configuration for image uploader -->
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <!-- Set required flag to false -->
+                        <required>false</required>
+
+                        <!-- Set uploader configuration, including URL for uploading images -->
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="catalog/category_image/upload" />
+                        </uploaderConfig>
+                        <!-- Set preview template for the uploaded image -->
+
+                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+                        <!-- Dialog title for selecting an image -->
+                        <openDialogTitle>Media Gallery</openDialogTitle>
+
+                        <!-- Set initial subpath for media gallery -->
+                        <initialMediaGalleryOpenSubpath>catalog/category/image</initialMediaGalleryOpenSubpath>
+
+                        <!-- Allowed file extensions for image upload -->
+                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
+
+                        <!-- Max file size allowed (4MB) -->
+                        <maxFileSize>4194304</maxFileSize>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+    </fieldset>
+
+    <!-- Fieldset for display settings, contains various configuration fields -->
+    <fieldset name="display_settings">
+        <!-- Field for the 'is_anchor' property, which is a checkbox -->
+        <field formElement="checkbox" name="is_anchor" sortOrder="80">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Set default value to 0 (false) for 'is_anchor' -->
+                    <item xsi:type="number" name="default">0</item>
+                </item>
+            </argument>
+            <settings>
+                <!-- Make this field invisible in the UI -->
+                <visible>false</visible>
+            </settings>
+        </field>
+
+        <!-- Container to group filter price range related fields -->
+        <container component="Magento_Ui/js/form/components/group" name="filter_price_range_group" sortOrder="110">
+            <!-- Field for the filter price range input -->
+            <field formElement="input" name="filter_price_range">
+                <settings>
+                    <!-- This field is hidden in the UI -->
+                    <visible>false</visible>
+                </settings>
+            </field>
+
+            <!-- Checkbox field for using configuration settings for filter price range -->
+            <field formElement="checkbox" name="use_config.filter_price_range">
+                <settings>
+                    <!-- This field is also hidden from the UI -->
+                    <visible>false</visible>
+                </settings>
+            </field>
+        </container>
+    </fieldset>
+
+    <!-- Fieldset for design settings, hidden from UI -->
+    <fieldset name="design">
+        <settings>
+            <!-- Set to false, making this fieldset invisible in the UI -->
+            <visible>false</visible>
+        </settings>
+    </fieldset>
+
+    <!-- Fieldset for schedule design update, hidden from UI -->
+    <fieldset name="schedule_design_update">
+        <settings>
+            <!-- Set to false, making this fieldset invisible in the UI -->
+            <visible>false</visible>
+        </settings>
+    </fieldset>
+</form>

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- This replaces the default class `Magento\InventorySalesAdminUi\Ui\DataProvider\Product\Form\Modifier\SalableQuantity` with the custom class `Maginium\Inventory\Ui\DataProvider\Product\Form\Modifier\SalableQuantity`. -->
+    <preference
+        for="Magento\InventorySalesAdminUi\Ui\DataProvider\Product\Form\Modifier\SalableQuantity"
+        type="Maginium\Inventory\Ui\DataProvider\Product\Form\Modifier\SalableQuantity"
+    />
+</config>

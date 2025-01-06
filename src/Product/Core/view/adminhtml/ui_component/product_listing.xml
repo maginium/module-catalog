@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Define the listing component with custom columns -->
+    <columns class="Magento\Catalog\Ui\Component\Listing\Columns" name="product_columns">
+        <!-- Custom Layout Column -->
+        <column name="custom_layout">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Disables the component from being editable -->
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Page Layout Column -->
+        <column name="page_layout">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Disables the component from being editable -->
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Gift Message Availability Column -->
+        <column name="gift_message_available">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Disables the component from being editable -->
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- MSRP (Manufacturer Suggested Retail Price) Column -->
+        <column name="msrp">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Disables the component from being editable -->
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Custom Design Column -->
+        <column name="custom_design">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Disables the component from being editable -->
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Custom Design From Date Column -->
+        <column name="custom_design_from">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Disables the component from being editable -->
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Custom Design To Date Column -->
+        <column name="custom_design_to">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Disables the component from being editable -->
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

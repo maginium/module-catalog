@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <!-- Defines the view for the 'products' indexer, linking it to the Fulltext model class. -->
+    <view class="Maginium\ProductElasticIndexer\Models\Indexer\Fulltext" group="indexer" id="products">
+        <!-- Defines the subscriptions for the 'products' indexer. -->
+        <subscriptions>
+            <!-- Subscribes to the 'products' table, using the 'product_id' column to track changes. -->
+            <table entity_column="product_id" name="products" />
+        </subscriptions>
+    </view>
+</config>

@@ -1,0 +1,11 @@
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <!-- Page element that defines the layout configuration for a specific page in Magento -->
+    <body>
+        <!-- Reference to the container that holds the price range filter group on the page -->
+        <!-- The 'remove' attribute is set to 'true', which means this container (filter_price_range_group) will be removed from the page layout -->
+        <referenceContainer name="filter_price_range_group" remove="true" />
+    </body>
+</page>

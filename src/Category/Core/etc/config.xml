@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <!-- Root default system configuration -->
+    <default>
+        <catalog>
+            <!-- SEO settings for catalog -->
+            <seo>
+                <!-- URL suffix for category pages (empty in this case) -->
+                <category_url_suffix>
+                    <![CDATA[]]>
+                </category_url_suffix>
+
+                <!-- Whether to use the canonical tag for category pages -->
+                <category_canonical_tag>1</category_canonical_tag>
+            </seo>
+
+            <!-- Category specific settings -->
+            <category>
+                <!-- Default placeholder image for categories -->
+                <placeholder>default/category_placeholder.png</placeholder>
+            </category>
+        </catalog>
+    </default>
+</config>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <!-- Defines the view for the 'categories' indexer, linking it to the Fulltext model class. -->
+    <view class="Maginium\CategoryElasticIndexer\Models\Indexer\Fulltext" group="indexer" id="categories">
+        <!-- Defines the subscriptions for the 'categories' indexer. -->
+        <subscriptions>
+            <!-- Subscribes to the 'categories' table, using the 'category_id' column to track changes. -->
+            <table entity_column="category_id" name="categories" />
+        </subscriptions>
+    </view>
+</config>

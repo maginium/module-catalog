@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Catalog Tab Configuration -->
+        <tab class="catalog-tab" id="catalog" sortOrder="20" translate="label">
+            <!-- Label for the Catalog tab in the admin panel -->
+            <label>Catalog</label>
+        </tab>
+
+        <!-- General Catalog Settings Section -->
+        <section id="catalog" sortOrder="10">
+            <!-- Label for the General section -->
+            <label>General</label>
+            <group id="frontend">
+                <!-- Frontend settings related to catalog -->
+                <field id="flat_catalog_product" showInDefault="0" showInStore="0" showInWebsite="0" />
+                <field id="flat_catalog_category" showInDefault="0" showInStore="0" showInWebsite="0" />
+                <field id="show_sku">
+                    <!-- Toggle to show or hide SKU -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+                <field id="show_swatches_in_product_list">
+                    <!-- Toggle to show or hide product swatches in the list -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <!-- Navigation Settings Group (Hidden by default) -->
+            <group id="navigation" showInDefault="0" showInStore="0" showInWebsite="0" />
+
+            <!-- Downloadable Product Settings Group -->
+            <group id="downloadable" showInDefault="1" showInStore="1" showInWebsite="1">
+                <field canRestore="1" id="enabled" showInDefault="1" translate="label" type="select">
+                    <!-- Label for the downloadable product setting -->
+                    <label>Downloadable</label>
+                    <!-- Yes/No options for enabling downloadable products -->
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <!-- Toggle to enable or disable downloadable products -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <!-- Product Alert Settings Group -->
+            <group id="productalert">
+                <field canRestore="1" id="allow_stock">
+                    <!-- Toggle for allowing stock alerts for products -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <!-- Search Settings Group -->
+            <group id="search">
+                <field canRestore="1" id="elasticsearch7_enable_auth">
+                    <!-- Toggle for enabling authentication for Elasticsearch 7 -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <!-- Custom Options Group (Hidden by default) -->
+            <group id="custom_options" showInDefault="0" showInStore="0" showInWebsite="0">
+                <field canRestore="1" id="use_calendar">
+                    <!-- Toggle for using a calendar in custom options -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <!-- Product Compare Settings Group -->
+            <group id="compare" sortOrder="110" translate="label" type="text">
+                <!-- Label for the product comparison settings -->
+                <label>Compare Product</label>
+            </group>
+
+            <!-- Product Data Configuration Settings Group -->
+            <group id="productconf" showInDefault="1" showInStore="1" showInWebsite="1">
+                <!-- Label for the product data configuration section -->
+                <label>Product Data Configuration</label>
+                <field canRestore="1" id="description_with_html" showInDefault="1" translate="label" type="select">
+                    <!-- Option to display product description with HTML -->
+                    <label>Display Product Description With Html</label>
+                    <!-- Yes/No options to control HTML description display -->
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <!-- Toggle to display product description with HTML -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+        </section>
+
+        <!-- Catalog Inventory Settings Section -->
+        <section id="cataloginventory" sortOrder="20">
+            <group id="indexer" showInDefault="0" showInStore="0" showInWebsite="0" />
+            <group id="bulk_operations" showInDefault="0" showInStore="0" showInWebsite="0" />
+            <group id="source_selection_distance_based" showInDefault="0" showInStore="0" showInWebsite="0" />
+            <group id="source_selection_distance_based_google" showInDefault="0" showInStore="0" showInWebsite="0" />
+
+            <!-- Catalog Inventory Options Group -->
+            <group id="options" showInDefault="1" showInStore="1" showInWebsite="1" translate="label" type="text">
+                <field canRestore="1" id="show_salable_qty_product_view" showInDefault="1" translate="label" type="select">
+                    <!-- Option to display salable quantity on the product view -->
+                    <label>Show Salable Qty Product View</label>
+                    <!-- Yes/No options for displaying salable quantity -->
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <!-- Toggle for showing salable quantity on the product view -->
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

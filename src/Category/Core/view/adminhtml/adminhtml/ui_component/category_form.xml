@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Fieldset for Display Settings -->
+    <fieldset name="display_settings">
+        <field name="is_anchor">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Form element type is hidden, meaning this field will not be visible in the UI -->
+                    <item xsi:type="string" name="formElement">hidden</item>
+                    <!-- Default value is set to 1 (true), meaning the category is considered an anchor by default -->
+                    <item xsi:type="number" name="default">1</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <!-- Fieldset for media content, collapsible, with a translated label -->
+    <fieldset name="media_content" sortOrder="20">
+        <settings>
+            <!-- Make the fieldset collapsible -->
+            <collapsible>true</collapsible>
+            <!-- Label for the fieldset, translated for localization -->
+            <label translate="true">Media Content</label>
+        </settings>
+
+        <!-- Image field for uploading a category banner -->
+        <field formElement="imageUploader" name="image" sortOrder="10">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Source is set to 'category' for this image -->
+                    <item xsi:type="string" name="source">category</item>
+                </item>
+            </argument>
+            <settings>
+                <!-- Use a custom template for image uploader -->
+                <elementTmpl>ui/form/element/uploader/image</elementTmpl>
+
+                <!-- Data type is string, as the image path will be stored -->
+                <dataType>string</dataType>
+
+                <!-- Label for the image field, translated for localization -->
+                <label translate="true">Banner</label>
+
+                <!-- Field visibility is true (visible) -->
+                <visible>true</visible>
+
+                <!-- Field is not required -->
+                <required>false</required>
+            </settings>
+
+            <!-- UI component configuration for image uploader -->
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <!-- Set required flag to false -->
+                        <required>false</required>
+
+                        <!-- Set uploader configuration, including URL for uploading images -->
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="catalog/category_image/upload" />
+                        </uploaderConfig>
+
+                        <!-- Set preview template for the uploaded image -->
+                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+
+                        <!-- Dialog title for selecting an image -->
+                        <openDialogTitle>Media Gallery</openDialogTitle>
+
+                        <!-- Set initial subpath for media gallery -->
+                        <initialMediaGalleryOpenSubpath>catalog/category/image</initialMediaGalleryOpenSubpath>
+
+                        <!-- Allowed file extensions for image upload -->
+                        <allowedExtensions>jpg jpeg gif png svg</allowedExtensions>
+
+                        <!-- Max file size allowed (4MB) -->
+                        <maxFileSize>4194304</maxFileSize>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

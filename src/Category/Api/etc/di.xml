@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\GetListInterface" type="Maginium\CategoryApi\Actions\GetList" />
+
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\SearchInterface" type="Maginium\CategoryApi\Actions\Search" />
+
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\GetByInterface" type="Maginium\CategoryApi\Actions\GetBy" />
+
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\GetByIdInterface" type="Maginium\CategoryApi\Actions\GetById" />
+
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\CreateInterface" type="Maginium\CategoryApi\Actions\Save" />
+
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\UpdateInterface" type="Maginium\CategoryApi\Actions\Update" />
+
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\UpsertInterface" type="Maginium\CategoryApi\Actions\Upsert" />
+
+    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
+    <preference for="Maginium\CategoryApi\Interfaces\DeleteInterface" type="Maginium\CategoryApi\Actions\DeleteById" />
+</config>

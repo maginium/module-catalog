@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <!-- Defines the 'categories' indexer and links it to the 'Fulltext' model. -->
+    <indexer class="Maginium\CategoryElasticIndexer\Models\Indexer\Fulltext" id="categories" view_id="categories">
+        <!-- Title for the indexer, supports translation. -->
+        <title translate="true">Categories</title>
+
+        <!-- Description for the indexer, supports translation. -->
+        <description
+            translate="true"
+        >Responsible for reindexing category data into the ElasticSearch index for optimized search and retrieval performance.</description>
+    </indexer>
+</config>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Fieldset for Schedule Design Update -->
+    <fieldset name="schedule-design-update">
+        <argument xsi:type="array" name="data">
+            <item xsi:type="array" name="config">
+                <!-- Set the 'schedule-design-update' fieldset visibility to false -->
+                <item xsi:type="boolean" name="visible">false</item>
+            </item>
+        </argument>
+    </fieldset>
+
+    <!-- Fieldset for Design Configuration -->
+    <fieldset name="design">
+        <argument xsi:type="array" name="data">
+            <item xsi:type="array" name="config">
+                <!-- Set the 'design' fieldset visibility to false -->
+                <item xsi:type="boolean" name="visible">false</item>
+            </item>
+        </argument>
+    </fieldset>
+
+    <!-- Fieldset for Product Details -->
+    <fieldset name="product-details">
+        <field name="rma_allowed">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <!-- Define the data type for 'rma_allowed' as boolean -->
+                    <item xsi:type="string" name="dataType">boolean</item>
+
+                    <!-- Define the form element as a checkbox -->
+                    <item xsi:type="string" name="formElement">checkbox</item>
+
+                    <!-- Define the UI preference for the checkbox toggle -->
+                    <item xsi:type="string" name="prefer">toggle</item>
+
+                    <!-- Label for the field, marked for translation -->
+                    <item xsi:type="string" name="label" translate="true">Return Allowed</item>
+
+                    <item xsi:type="array" name="valueMap">
+                        <!-- Map the boolean values to integers for storing in the database -->
+                        <item xsi:type="string" name="true">1</item>
+                        <item xsi:type="string" name="false">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <!-- Default configuration settings -->
+    <default>
+        <catalog>
+            <!-- Search Engine Configuration -->
+            <search>
+                <!-- Use Elasticsearch 7 as the search engine -->
+                <engine>elasticsearch7</engine>
+            </search>
+
+            <!-- Placeholder Images for Product Images -->
+            <placeholder>
+                <!-- Default image placeholder for product images -->
+                <image_placeholder>default/image_placeholder.png</image_placeholder>
+                <!-- Default thumbnail placeholder -->
+                <thumbnail_placeholder>default/thumbnail_placeholder.png</thumbnail_placeholder>
+                <!-- Default hover image placeholder -->
+                <img_hover_placeholder>default/img_hover_placeholder.png</img_hover_placeholder>
+                <!-- Default small image placeholder -->
+                <small_image_placeholder>default/small_image_placeholder.png</small_image_placeholder>
+                <!-- Default swatch image placeholder -->
+                <swatch_image_placeholder>default/swatch_image_placeholder.png</swatch_image_placeholder>
+            </placeholder>
+
+            <!-- SEO Settings for Product URLs and Canonical Tags -->
+            <seo>
+                <!-- Product URL suffix, left empty here -->
+                <product_url_suffix>
+                    <![CDATA[]]>
+                </product_url_suffix>
+                <!-- Enable product canonical tag for SEO -->
+                <product_canonical_tag>1</product_canonical_tag>
+                <!-- Enable product use of categories for SEO -->
+                <product_use_categories>1</product_use_categories>
+            </seo>
+
+            <!-- Frontend Configuration for Product List Display -->
+            <frontend>
+                <!-- Default display mode for product list: grid or list -->
+                <list_mode>grid-list</list_mode>
+                <!-- Number of products per page in grid view -->
+                <grid_per_page>45</grid_per_page>
+                <!-- Number of products per page in list view -->
+                <list_per_page>25</list_per_page>
+                <!-- Disable showing swatch tooltip -->
+                <show_swatch_tooltip>0</show_swatch_tooltip>
+                <!-- Limit the number of swatches per product -->
+                <swatches_per_product>16</swatches_per_product>
+                <!-- Values for number of items per page in grid view -->
+                <grid_per_page_values>9,15,30,45</grid_per_page_values>
+                <!-- Disable showing swatches in the product list view -->
+                <show_swatches_in_product_list>0</show_swatches_in_product_list>
+            </frontend>
+
+            <!-- Product Review Configuration -->
+            <review>
+                <!-- Disable product reviews -->
+                <active>0</active>
+                <!-- Disable guest reviews -->
+                <allow_guest>0</allow_guest>
+            </review>
+
+            <!-- Price Configuration -->
+            <price>
+                <!-- Set the scope for the price configuration -->
+                <scope>0</scope>
+            </price>
+
+            <!-- Custom Options Configuration -->
+            <custom_options>
+                <!-- Enable the use of calendar for custom options -->
+                <use_calendar>1</use_calendar>
+                <!-- Define the range of years for the calendar -->
+                <year_range>1900,2050</year_range>
+                <!-- Define the order for date fields: day, month, year -->
+                <date_fields_order>d,m,y</date_fields_order>
+            </custom_options>
+
+            <!-- Downloadable Products Configuration -->
+            <downloadable>
+                <!-- Disable downloadable products -->
+                <enabled>0</enabled>
+                <!-- Set the maximum number of downloads per product -->
+                <downloads_number>0</downloads_number>
+            </downloadable>
+        </catalog>
+    </default>
+</config>

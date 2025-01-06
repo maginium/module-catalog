@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\GetListInterface" type="Maginium\ProductApi\Actions\GetList" />
+
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\SearchInterface" type="Maginium\ProductApi\Actions\Search" />
+
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\GetByInterface" type="Maginium\ProductApi\Actions\GetBy" />
+
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\GetByIdInterface" type="Maginium\ProductApi\Actions\GetById" />
+
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\CreateInterface" type="Maginium\ProductApi\Actions\Save" />
+
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\UpdateInterface" type="Maginium\ProductApi\Actions\Update" />
+
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\UpsertInterface" type="Maginium\ProductApi\Actions\Upsert" />
+
+    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
+    <preference for="Maginium\ProductApi\Interfaces\DeleteInterface" type="Maginium\ProductApi\Actions\DeleteById" />
+</config>
