@@ -29,21 +29,24 @@
 
     <!-- Define a hydrator for the ProductInterface model -->
     <type name="Magento\Framework\EntityManager\HydratorPool">
+        <!-- Define the arguments for the HydratorPool -->
         <arguments>
             <argument xsi:type="array" name="hydrators">
-                <item
-                    xsi:type="string"
-                    name="Maginium\Product\Interfaces\Data\ProductInterface"
-                >Magento\Framework\EntityManager\AbstractModelHydrator</item>
+                <!-- Define the hydrator for the ProductInterface model -->
+                <item xsi:type="string" name="Maginium\Product\Interfaces\Data\ProductInterface">
+                    <!-- The hydrator used for the ProductInterface model -->
+                Magento\Framework\EntityManager\AbstractModelHydrator
+                </item>
             </argument>
         </arguments>
     </type>
 
+    <!-- Define a virtual type for the DataSourceResolver used in the product model -->
     <virtualType name="Maginium\Product\Models\DataSourceResolver" type="Maginium\Framework\Database\DataSourceResolver" />
-    
-    <!-- Datasources resolver -->
-    <type name="Maginium\Product\Models\Product">
-        <plugin name="product_model_resolver" sortOrder="1" type="Maginium\Product\Models\DataSourceResolver" />
-    </type>
 
+    <!-- Add a plugin to the Product model to resolve data sources -->
+    <type name="Maginium\Product\Models\Product">
+        <!-- Attach the product_data_source_resolver plugin to the Product model -->
+        <plugin name="product_data_source_resolver" sortOrder="1" type="Maginium\Product\Models\DataSourceResolver" />
+    </type>
 </config>

@@ -6,7 +6,7 @@ namespace Maginium\ProductElasticIndexer\Models;
 
 use Maginium\Foundation\Enums\DataType;
 use Maginium\Framework\Database\EloquentModel;
-use Maginium\Framework\Database\Enums\Searcher;
+use Maginium\Framework\Database\Enums\SearcherEngines;
 use Maginium\Framework\Elasticsearch\Eloquent\Model;
 use Maginium\Product\Interfaces\Data\ProductInterface;
 use Maginium\Product\Models\Attributes\ProductAttributes;
@@ -34,7 +34,7 @@ class Product extends Model implements ProductInterface
      *
      * @var string
      */
-    protected $connection = Searcher::ELASTIC_SEARCH;
+    protected $connection = SearcherEngines::ELASTIC_SEARCH;
 
     /**
      * Elasticsearch index name.
@@ -59,11 +59,9 @@ class Product extends Model implements ProductInterface
      */
     protected $keyType = DataType::INT;
 
-    /**
-     * Relationship: Product has many reviews.
-     */
-    public function reviews()
-    {
-        return $this->hasMany(Review::class, ReviewInterface::PRODUCT_ID, static::ID);
-    }
+    // Relationship: Product has many reviews.
+    // public function reviews()
+    // {
+    //     return $this->hasMany(Review::class, ReviewInterface::PRODUCT_ID, static::ID);
+    // }
 }

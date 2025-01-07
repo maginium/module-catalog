@@ -9,7 +9,7 @@ use Maginium\Category\Models\Attributes\CategoryAttributes;
 use Maginium\CategoryElasticIndexer\Models\Scopes\CategoryScopes;
 use Maginium\Foundation\Enums\DataType;
 use Maginium\Framework\Database\EloquentModel;
-use Maginium\Framework\Database\Enums\Searcher;
+use Maginium\Framework\Database\Enums\SearcherEngines;
 use Maginium\Framework\Elasticsearch\Eloquent\Model;
 
 /**
@@ -32,7 +32,7 @@ class Category extends Model implements CategoryInterface
      *
      * @var string
      */
-    protected $connection = Searcher::ELASTIC_SEARCH;
+    protected $connection = SearcherEngines::ELASTIC_SEARCH;
 
     /**
      * Elasticsearch index name.

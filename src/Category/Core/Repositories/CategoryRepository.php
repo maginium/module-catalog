@@ -14,7 +14,7 @@ use Maginium\Framework\Crud\Repository;
  *
  * This class extends the base `CategoryRepository` and implements custom functionality for handling categories.
  */
-class CategoryRepository /* extends Repository */ implements CategoryRepositoryInterface
+class CategoryRepository extends Repository implements CategoryRepositoryInterface
 {
     /**
      * StoreRepository constructor.
@@ -26,6 +26,6 @@ class CategoryRepository /* extends Repository */ implements CategoryRepositoryI
         ModelFactory $model,
         CategoryCollectionFactory $collection,
     ) {
-        // parent::__construct($model, $collection);
+        parent::__construct($model, $collection);
     }
 }
