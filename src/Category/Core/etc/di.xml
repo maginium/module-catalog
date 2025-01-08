@@ -45,12 +45,6 @@
         </arguments>
     </type>
 
-    <!-- Datasources resolver -->
-    <type name="Maginium\Category\Models\Category">
-        <!-- Attach the data source resolver plugin to the Category model -->
-        <plugin name="category_model_resolver" sortOrder="1" type="Maginium\Category\Models\DataSourceResolver" />
-    </type>
-
     <virtualType name="Maginium\Category\CategoryImageUpload" type="Magento\Catalog\Model\ImageUploader">
         <arguments>
             <!-- Specify the temporary upload path for category images -->
@@ -82,5 +76,9 @@
         </arguments>
     </type>
 
-    <virtualType name="Maginium\Category\Models\DataSourceResolver" type="Maginium\Framework\Database\DataSourceResolver" />
+    <!-- Datasources resolver -->
+    <type name="Maginium\Category\Models\Category">
+        <!-- Attach the data source resolver plugin to the Category model -->
+        <plugin name="category_model_resolver" sortOrder="1" type="Maginium\Framework\Database\Datasource\Resolver" />
+    </type>
 </config>

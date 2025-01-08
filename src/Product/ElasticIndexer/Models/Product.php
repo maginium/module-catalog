@@ -22,7 +22,7 @@ use Maginium\ProductReviewsElasticIndexer\Models\Review;
  *
  * @mixin EloquentModel
  */
-class Product extends Model implements ProductInterface
+class Product extends Model
 {
     // Trait for handling attributes
     use ProductAttributes;
@@ -41,14 +41,14 @@ class Product extends Model implements ProductInterface
      *
      * @var string
      */
-    protected $index = self::TABLE_NAME;
+    protected $index = ProductInterface::TABLE_NAME;
 
     /**
      * Primary key for the Product model.
      *
      * @var string
      */
-    protected $primaryKey = self::ID;
+    protected $primaryKey = ProductInterface::ID;
 
     /**
      * The "type" of the primary key ID.

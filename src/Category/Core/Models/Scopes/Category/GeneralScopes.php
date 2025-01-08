@@ -28,7 +28,7 @@ trait GeneralScopes
     public function scopeFindById(int $categoryId): ?AbstractCollection
     {
         return $this->getCollection()
-            ->addFieldToFilter('model_id', ['eq' => $categoryId])
+            ->addFieldToFilter('entity_id', ['eq' => $categoryId])
             ->addAttributeToSelect('*');
     }
 

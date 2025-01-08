@@ -62,5 +62,5 @@ interface CategoryInterface extends /* HasMetadataInterface, */ ModelInterface
      *
      * @var string
      */
-    public const ID = 'model_id';
+    public const ID = 'entity_id';
 }

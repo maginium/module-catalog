@@ -41,12 +41,9 @@
         </arguments>
     </type>
 
-    <!-- Define a virtual type for the DataSourceResolver used in the product model -->
-    <virtualType name="Maginium\Product\Models\DataSourceResolver" type="Maginium\Framework\Database\DataSourceResolver" />
-
     <!-- Add a plugin to the Product model to resolve data sources -->
     <type name="Maginium\Product\Models\Product">
-        <!-- Attach the product_data_source_resolver plugin to the Product model -->
-        <plugin name="product_data_source_resolver" sortOrder="1" type="Maginium\Product\Models\DataSourceResolver" />
+        <!-- Attach the data source resolver plugin to the Product model -->
+        <plugin name="product_model_resolver" sortOrder="1" type="Maginium\Framework\Database\Datasource\Resolver" />
     </type>
 </config>

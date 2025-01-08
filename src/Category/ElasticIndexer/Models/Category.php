@@ -20,7 +20,7 @@ use Maginium\Framework\Elasticsearch\Eloquent\Model;
  *
  * @mixin EloquentModel
  */
-class Category extends Model implements CategoryInterface
+class Category extends Model
 {
     // Trait for handling attributes
     use CategoryAttributes;
@@ -39,14 +39,14 @@ class Category extends Model implements CategoryInterface
      *
      * @var string
      */
-    protected $index = self::TABLE_NAME;
+    protected $index = CategoryInterface::TABLE_NAME;
 
     /**
      * Primary key for the Category model.
      *
      * @var string
      */
-    protected $primaryKey = self::ID;
+    protected $primaryKey = CategoryInterface::ID;
 
     /**
      * The "type" of the primary key ID.

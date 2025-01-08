@@ -2,12 +2,39 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <!-- Add custom attributes menu under Catalog -->
-        <update id="Magento_Catalog::catalog_attributes" title="Attributes" translate="title" module="Magento_Catalog" sortOrder="20" parent="Magento_Catalog::catalog" dependsOnModule="Magento_Catalog" resource="Magento_Catalog::catalog"/>
+        <update
+            dependsOnModule="Magento_Catalog"
+            id="Magento_Catalog::catalog_attributes"
+            module="Magento_Catalog"
+            parent="Magento_Catalog::catalog"
+            resource="Magento_Catalog::catalog"
+            sortOrder="20"
+            title="Attributes"
+            translate="title"
+        />
 
         <!-- Add Product Attributes sub-menu under Attributes -->
-        <update action="catalog/product_attribute/" id="Magento_Catalog::catalog_product_attributes" module="Magento_Catalog" parent="Magento_Catalog::catalog_attributes" resource="Magento_Catalog::attributes_attributes" sortOrder="10" title="Product" translate="title" />
+        <update
+            action="catalog/product_attribute/"
+            id="Magento_Catalog::catalog_product_attributes"
+            module="Magento_Catalog"
+            parent="Magento_Catalog::catalog_attributes"
+            resource="Magento_Catalog::attributes_attributes"
+            sortOrder="10"
+            title="Product"
+            translate="title"
+        />
 
         <!-- Add Attribute Set sub-menu under Attributes -->
-        <update action="catalog/product_set/" id="Magento_Catalog::catalog_attributes_sets" module="Magento_Catalog" parent="Magento_Catalog::catalog_attributes" resource="Magento_Catalog::sets" sortOrder="20" title="Attribute Set" translate="title" />
+        <update
+            action="catalog/product_set/"
+            id="Magento_Catalog::catalog_attributes_sets"
+            module="Magento_Catalog"
+            parent="Magento_Catalog::catalog_attributes"
+            resource="Magento_Catalog::sets"
+            sortOrder="20"
+            title="Attribute Set"
+            translate="title"
+        />
     </menu>
 </config>
