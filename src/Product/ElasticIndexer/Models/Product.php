@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Maginium\ProductElasticIndexer\Models;
 
 use Maginium\Foundation\Enums\DataType;
-use Maginium\Framework\Database\EloquentModel;
+use Maginium\Framework\Database\Eloquent\Model as EloquentModel;
 use Maginium\Framework\Database\Enums\SearcherEngines;
 use Maginium\Framework\Elasticsearch\Eloquent\Model;
 use Maginium\Product\Interfaces\Data\ProductInterface;

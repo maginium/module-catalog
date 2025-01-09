@@ -8,7 +8,7 @@ use Maginium\Category\Interfaces\Data\CategoryInterface;
 use Maginium\Category\Models\Attributes\CategoryAttributes;
 use Maginium\CategoryElasticIndexer\Models\Scopes\CategoryScopes;
 use Maginium\Foundation\Enums\DataType;
-use Maginium\Framework\Database\EloquentModel;
+use Maginium\Framework\Database\Eloquent\Model as EloquentModel;
 use Maginium\Framework\Database\Enums\SearcherEngines;
 use Maginium\Framework\Elasticsearch\Eloquent\Model;
 

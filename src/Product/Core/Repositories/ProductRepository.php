@@ -14,7 +14,7 @@ use Maginium\Product\Interfaces\Repositories\ProductRepositoryInterface;
  *
  * This class extends the base `ProductRepository` and implements custom functionality for handling products.
  */
-class ProductRepository extends Repository implements ProductRepositoryInterface
+class ProductRepository // extends Repository implements ProductRepositoryInterface
 {
     /**
      * StoreRepository constructor.
@@ -26,6 +26,6 @@ class ProductRepository extends Repository implements ProductRepositoryInterface
         ModelFactory $model,
         ProductCollectionFactory $collection,
     ) {
-        parent::__construct($model, $collection);
+        // parent::__construct($model, $collection);
     }
 }

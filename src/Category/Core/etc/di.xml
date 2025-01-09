@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Define a preference for the Magento\Catalog\Model\Category, specifying the custom Category class implementation. -->
-    <preference for="Magento\Catalog\Model\Category" type="Maginium\Category\Models\Category" />
+    <!-- <preference for="Magento\Catalog\Model\Category" type="Maginium\Category\Models\Category" /> -->
 
     <!-- Define a preference for the CategoryInterface, specifying the custom Category class implementation. -->
     <preference for="Maginium\Category\Interfaces\Data\CategoryInterface" type="Maginium\Category\Models\Category" />
