@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Section: Category List -->
+    <!-- Description: Routes for retrieving lists of categorys with optional pagination and search. -->
+
+    <!-- Route for retrieving a list of categorys -->
+    <route method="GET" url="/V2/categorys">
+        <service class="Maginium\CategoryApi\Interfaces\GetListInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for searching categorys -->
+    <route method="GET" url="/V2/categorys/search/:searchTerm">
+        <service class="Maginium\CategoryApi\Interfaces\SearchInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Section: Category Retrieval -->
+    <!-- Description: Routes for retrieving individual categorys by ID or other identifiers. -->
+
+    <!-- Route for retrieving a category by Identifier -->
+    <route method="GET" url="/V2/category/attribute/:id/:value">
+        <service class="Maginium\CategoryApi\Interfaces\GetByInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for retrieving a category by ID -->
+    <route method="GET" url="/V2/category/:id">
+        <service class="Maginium\CategoryApi\Interfaces\GetByIdInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Section: Category Modification -->
+    <!-- Description: Routes for creating, updating, upserting, and deleting categorys. -->
+
+    <!-- Route for saving a category -->
+    <route method="POST" url="/V2/category">
+        <service class="Maginium\CategoryApi\Interfaces\CreateInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for updating a category -->
+    <route method="PUT" url="/V2/category/:id">
+        <service class="Maginium\CategoryApi\Interfaces\UpdateInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for upserting a category -->
+    <route method="POST" url="/V2/categorys/upsert">
+        <service class="Maginium\CategoryApi\Interfaces\UpsertInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for deleting a category -->
+    <route method="DELETE" url="/V2/category/:id">
+        <service class="Maginium\CategoryApi\Interfaces\DeleteInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>
