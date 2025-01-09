@@ -63,4 +63,58 @@ interface CategoryInterface extends ModelInterface
      * @var string
      */
     public const ID = 'entity_id';
+
+    /**
+     * Constant for the "path" attribute.
+     *
+     * Represents the path of the entity within its hierarchy.
+     *
+     * @var string
+     */
+    public const PATH = 'path';
+
+    /**
+     * Constant for the "level" attribute.
+     *
+     * Represents the level in the entity's hierarchy.
+     *
+     * @var string
+     */
+    public const LEVEL = 'level';
+
+    /**
+     * Constant for the "position" attribute.
+     *
+     * Represents the position or ordering of the entity.
+     *
+     * @var string
+     */
+    public const POSITION = 'position';
+
+    /**
+     * Constant for the "parent_id" attribute.
+     *
+     * Represents the ID of the parent entity.
+     *
+     * @var string
+     */
+    public const PARENT_ID = 'parent_id';
+
+    /**
+     * Constant for the "children_count" attribute.
+     *
+     * Represents the count of child entities.
+     *
+     * @var string
+     */
+    public const CHILDREN_COUNT = 'children_count';
+
+    /**
+     * Constant for the "attribute_set_id" attribute.
+     *
+     * Represents the ID of the attribute set.
+     *
+     * @var string
+     */
+    public const ATTRIBUTE_SET_ID = 'attribute_set_id';
 }

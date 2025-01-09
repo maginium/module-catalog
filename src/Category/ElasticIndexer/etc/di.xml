@@ -1,5 +1,20 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define a preference for the CategoryInterface, specifying the custom Category class implementation. -->
+    <preference for="Maginium\CategoryElasticIndexer\Interfaces\Data\CategoryInterface" type="Maginium\CategoryElasticIndexer\Models\Category" />
+
+    <!-- Define a preference for the CategoryRepositoryInterface, specifying the custom CategoryRepository class implementation. -->
+    <preference
+        for="Maginium\CategoryElasticIndexer\Interfaces\Repositories\CategoryRepositoryInterface"
+        type="Maginium\CategoryElasticIndexer\Repositories\CategoryRepository"
+    />
+
+    <!-- Define a preference for the CategoryServiceInterface, specifying the custom CategoryService class implementation. -->
+    <preference
+        for="Maginium\CategoryElasticIndexer\Interfaces\Services\CategoryServiceInterface"
+        type="Maginium\CategoryElasticIndexer\Services\CategoryService"
+    />
+
     <!-- Customizes the field mapping behavior for Elasticsearch. -->
     <type name="Magento\Elasticsearch\Model\Adapter\FieldMapperInterface">
         <arguments>

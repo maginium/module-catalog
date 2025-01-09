@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Maginium\CategoryElasticIndexer\Models;
 
-use Maginium\Category\Interfaces\Data\CategoryInterface;
 use Maginium\Category\Models\Attributes\CategoryAttributes;
+use Maginium\CategoryElasticIndexer\Interfaces\Data\CategoryInterface;
 use Maginium\CategoryElasticIndexer\Models\Scopes\CategoryScopes;
 use Maginium\Foundation\Enums\DataType;
 use Maginium\Framework\Database\Eloquent\Model as EloquentModel;
@@ -20,7 +20,7 @@ use Maginium\Framework\Elasticsearch\Eloquent\Model;
  *
  * @mixin EloquentModel
  */
-class Category extends Model
+class Category extends Model implements CategoryInterface
 {
     // Trait for handling attributes
     use CategoryAttributes;
@@ -56,4 +56,37 @@ class Category extends Model
      * @var string
      */
     protected $keyType = DataType::INT;
+
+    /**
+     * The "casts" for attribute conversion.
+     *
+     * These are used to specify how attributes should be converted when accessed.
+     * In this case, all attributes are cast to integers.
+     *
+     * @var array
+     */
+    protected $casts = [
+        CategoryInterface::LEVEL => DataType::INT,
+        CategoryInterface::POSITION => DataType::INT,
+        CategoryInterface::PARENT_ID => DataType::INT,
+        CategoryInterface::CHILDREN_COUNT => DataType::INT,
+        CategoryInterface::ATTRIBUTE_SET_ID => DataType::INT,
+    ];
+
+    /**
+     * The "fillable" attributes.
+     *
+     * These are the attributes that are mass-assignable.
+     * Use this to specify which fields can be updated via mass-assignment.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        CategoryInterface::PATH,
+        CategoryInterface::LEVEL,
+        CategoryInterface::POSITION,
+        CategoryInterface::PARENT_ID,
+        CategoryInterface::CHILDREN_COUNT,
+        CategoryInterface::ATTRIBUTE_SET_ID,
+    ];
 }

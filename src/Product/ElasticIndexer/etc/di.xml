@@ -1,5 +1,20 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define a preference for the ProductInterface, specifying the custom Product class implementation. -->
+    <preference for="Maginium\ProductElasticIndexer\Interfaces\Data\ProductInterface" type="Maginium\ProductElasticIndexer\Models\Product" />
+
+    <!-- Define a preference for the ProductRepositoryInterface, specifying the custom ProductRepository class implementation. -->
+    <preference
+        for="Maginium\ProductElasticIndexer\Interfaces\Repositories\ProductRepositoryInterface"
+        type="Maginium\ProductElasticIndexer\Repositories\ProductRepository"
+    />
+
+    <!-- Define a preference for the ProductServiceInterface, specifying the custom ProductService class implementation. -->
+    <preference
+        for="Maginium\ProductElasticIndexer\Interfaces\Services\ProductServiceInterface"
+        type="Maginium\ProductElasticIndexer\Services\ProductService"
+    />
+
     <!-- Customizes the field mapping behavior for Elasticsearch. -->
     <type name="Magento\Elasticsearch\Model\Adapter\FieldMapperInterface">
         <arguments>

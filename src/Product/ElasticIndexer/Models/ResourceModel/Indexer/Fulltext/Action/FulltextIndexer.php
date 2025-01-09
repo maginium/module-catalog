@@ -9,7 +9,7 @@ use Magento\Catalog\Model\Product\Visibility;
 use Magento\Catalog\Model\ResourceModel\Product\Collection;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Maginium\ElasticIndexer\Models\ResourceModel\Indexer\Fulltext\Action\AbstractResourceModel;
-use Maginium\Foundation\Enums\SortOrder;
+use Maginium\Foundation\Enums\SortProduct;
 use Maginium\Foundation\Enums\Status;
 use Maginium\Framework\Support\Validator;
 use Maginium\Product\Interfaces\Data\ProductInterfaceFactory as ModelFactory;
@@ -89,7 +89,7 @@ class FulltextIndexer extends AbstractResourceModel
 
         // Apply pagination and sorting.
         $collection->setPageSize($limit)
-            ->setOrder($this->getModel()->getKeyName(), SortOrder::ASC);
+            ->setProduct($this->getModel()->getKeyName(), SortProduct::ASC);
 
         // Initialize an array to hold the processed data.
         $documents = [];
