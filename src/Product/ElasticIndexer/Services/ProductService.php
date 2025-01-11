@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Maginium\ProductElasticIndexer\Services;
 
 use Maginium\Framework\Crud\Service;
-use Maginium\Product\Interfaces\Repositories\ProductRepositoryInterface;
-use Maginium\Product\Interfaces\Services\ProductServiceInterface;
+use Maginium\ProductElasticIndexer\Interfaces\Repositories\ProductRepositoryInterface;
+use Maginium\ProductElasticIndexer\Interfaces\Services\ProductServiceInterface;
 
 /**
  * Class ProductService.

@@ -19,8 +19,5 @@
     <preference for="Maginium\ProductApi\Interfaces\UpdateInterface" type="Maginium\ProductApi\Actions\Update" />
 
     <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
-    <preference for="Maginium\ProductApi\Interfaces\UpsertInterface" type="Maginium\ProductApi\Actions\Upsert" />
-
-    <!-- Set preference for ProductServiceInterface to use ProductService implementation -->
     <preference for="Maginium\ProductApi\Interfaces\DeleteInterface" type="Maginium\ProductApi\Actions\DeleteById" />
 </config>

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Maginium\CategoryElasticIndexer\Services;
 
-use Maginium\Category\Interfaces\Repositories\CategoryRepositoryInterface;
-use Maginium\Category\Interfaces\Services\CategoryServiceInterface;
+use Maginium\CategoryElasticIndexer\Interfaces\Repositories\CategoryRepositoryInterface;
+use Maginium\CategoryElasticIndexer\Interfaces\Services\CategoryServiceInterface;
 use Maginium\Framework\Crud\Service;
 
 /**

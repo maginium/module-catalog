@@ -12,6 +12,8 @@ use Maginium\Category\Models\Attributes\CategoryAttributes;
 use Maginium\Category\Models\Scopes\CategoryScopes;
 use Maginium\CategoryElasticIndexer\Models\Category as ElasticModel;
 use Maginium\Foundation\Enums\DataType;
+use Maginium\Framework\Crud\Traits\Filterable;
+use Maginium\Framework\Crud\Traits\Sortable;
 use Maginium\Framework\Database\Eloquent\Model;
 use Maginium\Framework\Database\Interfaces\SearchableInterface;
 
@@ -32,6 +34,10 @@ class Category extends Model implements CategoryInterface, SearchableInterface
     use CategoryAttributes;
     // Trait for handling scopes
     use CategoryScopes;
+    // Trait for handling filters
+    use Filterable;
+    // Trait for handling sorts
+    use Sortable;
 
     /**
      * The table associated with the model.

@@ -8,6 +8,8 @@ use Magento\Catalog\Api\Data\ProductInterface as BaseModelInterface;
 use Magento\Framework\Model\AbstractExtensibleModel;
 use Magento\Framework\Model\AbstractModel;
 use Maginium\Foundation\Enums\DataType;
+use Maginium\Framework\Crud\Traits\Filterable;
+use Maginium\Framework\Crud\Traits\Sortable;
 use Maginium\Framework\Database\Eloquent\Model;
 use Maginium\Framework\Database\Interfaces\SearchableInterface;
 use Maginium\Product\Interfaces\Data\ProductInterface;
@@ -28,10 +30,14 @@ use Maginium\ProductElasticIndexer\Models\Product as ElasticModel;
  */
 class Product extends Model implements ProductInterface, SearchableInterface
 {
+    // Trait for handling filters
+    use Filterable;
     // Trait for handling attributes
     use ProductAttributes;
     // Trait for handling scopes
     use ProductScopes;
+    // Trait for handling sorts
+    use Sortable;
 
     /**
      * The table associated with the model.

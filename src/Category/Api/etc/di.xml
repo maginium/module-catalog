@@ -19,8 +19,5 @@
     <preference for="Maginium\CategoryApi\Interfaces\UpdateInterface" type="Maginium\CategoryApi\Actions\Update" />
 
     <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
-    <preference for="Maginium\CategoryApi\Interfaces\UpsertInterface" type="Maginium\CategoryApi\Actions\Upsert" />
-
-    <!-- Set preference for CategoryServiceInterface to use CategoryService implementation -->
     <preference for="Maginium\CategoryApi\Interfaces\DeleteInterface" type="Maginium\CategoryApi\Actions\DeleteById" />
 </config>

@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Section: Category List -->
-    <!-- Description: Routes for retrieving lists of categorys with optional pagination and search. -->
+    <!-- Description: Routes for retrieving lists of categories with optional pagination and search. -->
 
-    <!-- Route for retrieving a list of categorys -->
-    <route method="GET" url="/V2/categorys">
+    <!-- Route for retrieving a list of categories -->
+    <route method="GET" url="/V2/categories">
         <service class="Maginium\CategoryApi\Interfaces\GetListInterface" method="handle" />
         <resources>
             <!-- Allow anonymous access to this API endpoint -->
@@ -12,8 +12,8 @@
         </resources>
     </route>
 
-    <!-- Route for searching categorys -->
-    <route method="GET" url="/V2/categorys/search/:searchTerm">
+    <!-- Route for searching categories -->
+    <route method="GET" url="/V2/categories/search/:searchTerm">
         <service class="Maginium\CategoryApi\Interfaces\SearchInterface" method="handle" />
         <resources>
             <!-- Allow anonymous access to this API endpoint -->
@@ -22,16 +22,7 @@
     </route>
 
     <!-- Section: Category Retrieval -->
-    <!-- Description: Routes for retrieving individual categorys by ID or other identifiers. -->
-
-    <!-- Route for retrieving a category by Identifier -->
-    <route method="GET" url="/V2/category/attribute/:id/:value">
-        <service class="Maginium\CategoryApi\Interfaces\GetByInterface" method="handle" />
-        <resources>
-            <!-- Allow anonymous access to this API endpoint -->
-            <resource ref="anonymous" />
-        </resources>
-    </route>
+    <!-- Description: Routes for retrieving individual categories by ID or other identifiers. -->
 
     <!-- Route for retrieving a category by ID -->
     <route method="GET" url="/V2/category/:id">
@@ -42,15 +33,24 @@
         </resources>
     </route>
 
+    <!-- Route for retrieving a category by Identifier -->
+    <route method="GET" url="/V2/category/attribute/:attribute/:code">
+        <service class="Maginium\CategoryApi\Interfaces\GetByInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
     <!-- Section: Category Modification -->
-    <!-- Description: Routes for creating, updating, upserting, and deleting categorys. -->
+    <!-- Description: Routes for creating, updating, upserting, and deleting categories. -->
 
     <!-- Route for saving a category -->
     <route method="POST" url="/V2/category">
         <service class="Maginium\CategoryApi\Interfaces\CreateInterface" method="handle" />
         <resources>
             <!-- Require admin access for this API endpoint -->
-            <resource ref="Magento_Catalog::categories" />
+            <resource ref="Magento_Sales::sales" />
         </resources>
     </route>
 
@@ -59,16 +59,7 @@
         <service class="Maginium\CategoryApi\Interfaces\UpdateInterface" method="handle" />
         <resources>
             <!-- Require admin access for this API endpoint -->
-            <resource ref="Magento_Catalog::categories" />
-        </resources>
-    </route>
-
-    <!-- Route for upserting a category -->
-    <route method="POST" url="/V2/categorys/upsert">
-        <service class="Maginium\CategoryApi\Interfaces\UpsertInterface" method="handle" />
-        <resources>
-            <!-- Require admin access for this API endpoint -->
-            <resource ref="Magento_Catalog::categories" />
+            <resource ref="Magento_Sales::sales" />
         </resources>
     </route>
 
@@ -77,7 +68,7 @@
         <service class="Maginium\CategoryApi\Interfaces\DeleteInterface" method="handle" />
         <resources>
             <!-- Require admin access for this API endpoint -->
-            <resource ref="Magento_Catalog::categories" />
+            <resource ref="Magento_Sales::sales" />
         </resources>
     </route>
 </routes>
